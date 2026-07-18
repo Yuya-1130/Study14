@@ -52,5 +52,40 @@ int main()
          // キーを指定して削除する
         map.erase('c');
     }
+
+    // --------------map のイテレーター---------------
+    // 内容を取得していく
+    for (std::map<char, float>::iterator it = map.begin(); it != map.end(); it++) 
+    {
+        // イテレーターから要素を取得
+        char key = it->first;
+        float value = it->second;
+
+        // イテレーター空要素を更新
+        // it->first = 'x'; // キーは更新されない
+        it->second = 500.5f;// 値は更新できる
+    }
+    // map は直接数値をしていして位置を移動できない
+
+    // 挿入
+    {
+        // 位置を指定して追加する（ただしソートされる為意味がない）
+        std::map<char, float>::const_iterator position = map.begin();
+        map.insert(position, std::make_pair('x', 100.0f));
+    }
+
+    // 削除
+    {
+        for (std::map<char, float>::iterator it = map.begin(); it != map.end(); ++it)
+        {
+            // 指定のキーだったらその位置を指定して削除する
+            char key = it->first;
+            if (key == 'b')
+            {
+                map.erase(it);
+                break;
+            }
+        }
+    }
 }
 
