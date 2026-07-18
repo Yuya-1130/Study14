@@ -71,5 +71,60 @@ int main()
         // 全部削除する
         nums.clear();
     }
+
+    //-------------Vectorのイテレーター-------------
+    
+    // ・・・追加方法--省略--  上記の方法
+
+    // イテレーターでアクセスする
+    for (std::vector<int>::iterator it = nums.begin(); it != nums.end(); ++it)
+    {
+        // 取得方法
+        {
+            // イテレーターはポインタのように利用する
+            int num = *it;
+            std::cout << num << std::endl;
+        }
+
+        // 更新方法
+        {
+            // 要素の内容を「１００」に更新する
+            *it = 100;
+            int num = *it;
+            std::cout << num << std::endl;
+        }
+    }
+
+    // ・・・削除方法--省略--
+
+
+    // ------指定の位置への追加方法------
+    {
+        // 「２」が入っている位置に「５」を追加したい
+        std::vector<int>::iterator pos = nums.begin();
+        pos += 1; // pos++
+        nums.insert(pos, 5);
+    }
+    
+    // ------指定の位置の削除方法--------
+    {
+        // 「1, 5, 2, 3」の「２」を削除したい
+        std::vector<int>::iterator pos = nums.begin();
+        pos += 2;
+        nums.erase(pos);
+    }
+
+    // for ループで削除する場合
+    // 下記のコードはクラッシュする
+    for (std::vector<int>::iterator it = nums.begin(); it != nums.end(); it++) {
+        nums.erase(it);
+    }
+    // 回避方法
+    for (std::vector<int>::iterator it = nums.begin(); it != nums.end();)
+    {
+        // erase の戻り値で、削除した次の位置を取得する
+      it =  nums.erase(it);
+    }
+    //----------------------------------------------
 }
 
