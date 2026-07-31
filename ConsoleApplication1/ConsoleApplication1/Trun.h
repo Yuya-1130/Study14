@@ -2,9 +2,9 @@
 #include "Teams.h"
 
 // 1ターンの戦闘処理のクラス
-class Trun
+class Turn
 {
 public:
-	static void OneTurn(Teams& Player, Teams& Enemy);
+	static void OneTurn(Teams& Player, Teams& Enemy, int turn);
 };
 

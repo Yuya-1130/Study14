@@ -1,5 +1,6 @@
 #pragma once
-class Judge
-{
-};
+class Random {
 
+public:
+	static int Range(int min, int max);
+};

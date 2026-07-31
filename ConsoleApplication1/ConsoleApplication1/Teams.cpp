@@ -1,21 +1,25 @@
 #include "Teams.h"
-#include <iostream>
 
 // w‰c‚Ì‰Šú‰»
 Teams::Teams(const std::string& n, int intialForce)
 	: name(n), force_value(intialForce) {}
 
 
-void Teams::AddMember(std::unique_ptr<Character > ch) {
+Teams::~Teams() {
+	for (auto ch : members) {
+		delete ch;
+	}
+}
+void Teams::AddMember(Character* ch) {
 	// ƒLƒƒƒ‰‚ğw‰c‚É’Ç‰Á
-	members.push_back(std::move(ch));
+	members.push_back(ch);
 }
 
 
 Character* Teams::GetMember(int index) {
 	// w’è‚µ‚½‚P`‚R‚Ì”Ô†‚ÌƒLƒƒƒ‰‚ğæ“¾
 	// ¶ƒ|ƒCƒ“ƒ^‚ğ‚Â‚©‚Á‚Ä•Ô‚·
-	return members[index].get();
+	return members[index];
 }
 
 int Teams::GetForce() const {

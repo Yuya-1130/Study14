@@ -1,6 +1,6 @@
 #pragma once
 #include <vector>
-#include <memory>
+#include <string>
 #include "Character.h"
 
 /// <summary>
@@ -14,15 +14,16 @@ private:
 	// 戦力値
 	int force_value;
 	// チームメンバーを表示させる
-	std::vector<std::unique_ptr<Character>> members;
+	std::vector<Character*> members;
 
 public:
 
 	// コンストラクタ
 	Teams(const std::string& n, int intialForce);
+	~Teams();
 
 	// キャラの所有権を移す
-	void AddMember(std::unique_ptr<Character > ch);
+	void AddMember(Character* ch);
 
 	// 選択したキャラを取得
 	Character* GetMember(int index);
