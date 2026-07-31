@@ -46,7 +46,5 @@ public:
 	// –¼‘O‚ðŽó‚¯Žæ‚é
 	const std::string& GetName() const;
 
-	// ƒWƒ‡ƒu–¼‚ð•Ô‚·
-	//std::string GetJobName() const;
 };
 
