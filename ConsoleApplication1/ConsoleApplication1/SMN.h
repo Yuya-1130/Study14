@@ -7,6 +7,6 @@ class SMN : public Character
 public:
 
 	// ¢Š«m‚Ìî•ñ
-	SMN(const std::string& n, int power) : Character(n, Job::SMN, power) {}
+	SMN(const std::string& n, int power);
 };
 

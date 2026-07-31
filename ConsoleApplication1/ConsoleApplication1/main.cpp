@@ -22,4 +22,17 @@ int main() {
 
 	// ƒ^[ƒ“ˆ—
 	int turn = 1;
+	while (PL->GetForce() > 0 && EN->GetForce() > 0) {
+		Turn::OneTurn(*PL, *EN, turn);
+		turn++;
+	}
+
+	std::cout << "ƒŠƒUƒ‹ƒg" << std::endl;
+
+	if (PL->GetForce() <= 0) {
+		std::cout << "“Gw‰c‚ÌŸ—˜" << std::endl;
+	}
+	else {
+		std::cout << "–¡•ûw‰c‚ÌŸ—˜" << std::endl;
+	}
 }

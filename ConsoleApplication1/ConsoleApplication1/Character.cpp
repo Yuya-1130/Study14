@@ -19,17 +19,7 @@
  // 名前を受け取る内容
  const std::string& Character::GetName() const { return name; }
 
- // ジョブをわかりやすいように日本語にして返したい
- std::string Character::GetJobName() const {
-	 
-	 switch (job) {
-	 case Job::SWD: return "剣士";
-	 case Job::MAG: return "魔法使い";
-	 case Job::SMN: return "召喚士";
-	 
-	 }
-	 return "エラー";
- }
+ 
 
  
 

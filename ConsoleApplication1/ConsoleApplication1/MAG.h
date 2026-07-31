@@ -7,6 +7,6 @@ class MAG : public Character
 public:
 
 	// –‚–@g‚¢‚Ìî•ñ
-	MAG(const std::string& n, int power) : Character(n, Job::MAG, power) {}
+	MAG(const std::string& n, int power);
 };
 

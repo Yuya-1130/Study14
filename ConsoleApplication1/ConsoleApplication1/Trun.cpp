@@ -9,7 +9,7 @@ void Turn::OneTurn(Teams& Player, Teams& Enemy, int turn) {
 	std::cout << "\n===== ƒ^[ƒ“ " << turn << " =====\n";
 
 	// –¡•û‚ÌƒLƒƒƒ‰‚ğ‘I‘ğ‚·‚é‚O`‚Q‚Å
-	std::cout << "ƒWƒ‡ƒu‚Ì‘I‘ği0.Œ•m 1.–‚–@g‚¢ 2.¢Š«m";
+	std::cout << "ƒWƒ‡ƒu‚Ì‘I‘ği0.Œ•m 1.–‚–@g‚¢ 2.¢Š«m" << std::endl;
 	int pl;
 	std::cin >> pl;
 	if (pl < 0 || pl > 2) pl = 0;
@@ -17,7 +17,7 @@ void Turn::OneTurn(Teams& Player, Teams& Enemy, int turn) {
 	Character* P = Player.GetMember(pl);
 
 	// –¡•û‚Ìs“®‚ğ‘I‘ğ‚·‚éi‚Por2)1.UŒ‚@2.–hŒä
-	std::cout << "s“®‚ğ‘I‘ğ@i0.UŒ‚ 1.–hŒäj";
+	std::cout << "s“®‚ğ‘I‘ğ@i0.UŒ‚ 1.–hŒäj" << std::endl;
 	int action;
 	std::cin >> action;
 	Action PL_action = (action == 0) ? Action::Attack : Action::Defend;
@@ -32,10 +32,10 @@ void Turn::OneTurn(Teams& Player, Teams& Enemy, int turn) {
 
 	// s“®Œ‹‰Ê‚ğ•\¦
 	std::cout << "©w‰cF" << P->GetName() 
-		<< "" << P->GetJobName() << ((PL_action == Action::Attack) ? "UŒ‚" : "–hŒä") << std::endl;
+		<< " :" <<  ((PL_action == Action::Attack) ? "UŒ‚" : "–hŒä") << std::endl;
 
 	std::cout << "“Gw‰cF" << E->GetName() 
-		<< "" << E->GetJobName() << ((EN_action == Action::Attack) ? "UŒ‚" : "–hŒä") << std::endl;
+		<< ":" <<  ((EN_action == Action::Attack) ? "UŒ‚" : "–hŒä") << std::endl;
 
 	// í“¬ˆ—
 	int P_Force = Player.GetForce();
@@ -49,7 +49,7 @@ void Turn::OneTurn(Teams& Player, Teams& Enemy, int turn) {
 
 	// í—Í‚ğ•\¦
 	std::cout << "©w‰cí—Í:" << Player.GetForce()
-		<< "“Gí—ÍF" << Enemy.GetForce() << std::endl;
+	 << "\n" << "“Gí—ÍF" << Enemy.GetForce() << std::endl;
 		 
 }
 
